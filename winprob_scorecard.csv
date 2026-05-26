@@ -1,0 +1,6 @@
+metric,value
+n_samples,1871324
+acc,0.740527
+auc,0.829158
+brier,0.167940
+ece,0.003400

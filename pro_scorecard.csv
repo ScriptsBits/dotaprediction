@@ -1,0 +1,7 @@
+metric,value
+games,495
+n_samples,18233
+acc,0.689300
+auc,0.778700
+brier,0.189400
+ece,0.028400
