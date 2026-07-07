@@ -53,12 +53,16 @@ ratings only help in minutes 1-10.
 
 ## Loading
 
+**Requires `lightgbm>=4.0`** (`pip install -r pro/requirements.txt`). The model
+was saved by LightGBM 4.x (`version=v4` in `model.txt`); LightGBM 3.x and older
+will raise a model-format error when reading it.
+
 ```python
 import lightgbm as lgb, json
 
 booster = lgb.Booster(model_file="pro/model.txt")
 meta = json.loads(open("pro/model_meta.json").read())
-p_raw = booster.predict(X)  # X columns = meta["feature_names"], in order
+p_raw = booster.predict(X)  # X columns = meta["features"], in order
 
 # apply Platt calibration (recommended - improves ECE, monotone so AUC unchanged)
 import numpy as np
