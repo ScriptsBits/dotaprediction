@@ -1,0 +1,24 @@
+{
+  "features": [
+    "nw_r_p2",
+    "nw_r_p3",
+    "nw_d_p2",
+    "nw_d_p3",
+    "nw_r",
+    "nw_diff",
+    "towers_dead_R",
+    "towers_dead_D",
+    "rax_diff"
+  ],
+  "best_iteration": 22,
+  "n_games": 1291,
+  "n_rows": 52571,
+  "val_auc": 0.8218,
+  "platt": {
+    "a": 1.843529,
+    "b": -0.222847
+  },
+  "val_ece_raw": 0.0954,
+  "val_ece_platt": 0.0323,
+  "note": "no_rank top-AUC ablation sub-model; net worth + towers/rax only. Apply Platt {a,b} via config.platt_apply for calibrated probs."
+}

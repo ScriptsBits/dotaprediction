@@ -1,0 +1,11 @@
+model,track,n_features,n_test_rows,acc,auc,brier,ece,logloss
+Pro no_rank Full(19),no_rank,19,6512,0.7342,0.8274,0.1716,0.0489,0.5135
+Pro no_rank Reco(2),no_rank,2,6512,0.6671,0.8346,0.1973,0.1445,0.574
+Pro with_rank Full(25),with_rank,25,6512,0.7366,0.8184,0.1833,0.0898,0.5498
+Pro with_rank Reco(2),with_rank,2,6512,0.6566,0.8327,0.2056,0.1593,0.5937
+Pro no_rank_t Full(20),no_rank,20,6512,0.7331,0.8268,0.1722,0.048,0.5142
+Pro no_rank_t Reco(6),no_rank,6,6512,0.7287,0.8256,0.1741,0.0533,0.5186
+Pro with_rank_t Full(26),with_rank,26,6512,0.7182,0.8062,0.2022,0.1293,0.5937
+Pro with_rank_t Reco(1),with_rank,1,6512,0.6325,0.8158,0.2171,0.1841,0.6245
+Pro Min(3),no_rank,3,6512,0.7368,0.8356,0.1712,0.0729,0.5166
+Valve (ref set),valve,-,17755,0.6823,0.7674,0.1941,0.0254,0.5618

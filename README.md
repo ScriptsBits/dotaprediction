@@ -13,6 +13,13 @@ score your own game-minutes without the raw replay data.
 | `max482/`  | 482 | The "Max" model from the pro-generalization test (`player_lgbm_herowr_rank`). |
 | `micro19/` | 19  | Net worth (per slot + team) and towers/rax only. The ablation endpoint that keeps almost all of the signal. |
 | `min3/`    | 3   | `{nw_d, nw_diff, rax_dead_D}` — the irreducible core. Still beats a coin flip by a mile. |
+| `pro/`     | 9   | Trained directly on **pro** matches (OpenDota JSON), not pub replays. Role-indexed net worth + towers/rax, Platt-calibrated. Beats Valve on every metric on a matched pro held-out set. See `pro/README.md`. |
+
+All four pub models (`herowr`/`max482`/`micro19`/`min3`) share one held-out pub
+test split; `pro/` is a separate model with its own pro-only train/test split
+and evaluation CSVs (`pro/pro_model_comparison.csv`, `pro/matched_holdout_compare.csv`)
+instead of a `test_preds.npz` — see `pro/README.md` for why the two domains
+aren't directly comparable via `evaluate.py`.
 
 `herowr` and `max482` are two 482-feature experiments that converged — they give
 identical predictions on this pub test split, so `evaluate.py` reports the same
@@ -40,6 +47,7 @@ python evaluate.py
 # 2) score one feature row with any model
 python predict.py herowr example_input.csv
 python predict.py min3    example_input.csv
+python predict.py pro     example_input.csv   # note: pro/ expects pro-shaped features, see pro/README.md
 ```
 
 `example_input.csv` is one real pub-test game-minute (482 features, canonical
